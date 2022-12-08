@@ -1,4 +1,3 @@
-import gridfs
 from flask import Flask, render_template, request
 from newsSystem import news_search
 
