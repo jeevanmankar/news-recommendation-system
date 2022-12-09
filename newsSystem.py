@@ -4,6 +4,7 @@ nltk.download('punkt')
 import pandas as pd
 from operator import itemgetter
 import joblib
+
 tfidf_news_model = joblib.load('tfidf_news_model_pkl')
 lsi_news_model = joblib.load('lsi_news_model_pkl')
 index = joblib.load('index_model_pkl')
@@ -36,7 +37,7 @@ def news_search(search_term):
 
         if j == (index.num_best-1):
             break
-    print(news)
+    
     return pd.DataFrame(news, columns=['Relevance','Title','Description','Link','Keywords'])
 
     
