@@ -8,6 +8,11 @@ index = joblib.load('index_model_pkl')
 dictionary = joblib.load('dictionary')
 data_df = joblib.load('data_df_pkl')
 
+print(tfidf_news_model)
+print(lsi_news_model)
+print(dictionary)
+print(data_df)
+
 def news_search(search_term):
 
     query_bow = dictionary.doc2bow(word_tokenize(search_term))
@@ -34,8 +39,10 @@ def news_search(search_term):
 
         if j == (index.num_best-1):
             break
-
+    print(news)
     return pd.DataFrame(news, columns=['Relevance','Title','Description','Link','Keywords'])
+
+    
 
 
 
