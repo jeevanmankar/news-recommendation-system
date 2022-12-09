@@ -1,4 +1,6 @@
+import nltk
 from nltk.tokenize import word_tokenize
+nltk.download('punkt')
 import pandas as pd
 from operator import itemgetter
 import joblib
@@ -7,11 +9,6 @@ lsi_news_model = joblib.load('lsi_news_model_pkl')
 index = joblib.load('index_model_pkl')
 dictionary = joblib.load('dictionary')
 data_df = joblib.load('data_df_pkl')
-
-print(tfidf_news_model)
-print(lsi_news_model)
-print(dictionary)
-print(data_df)
 
 def news_search(search_term):
 
